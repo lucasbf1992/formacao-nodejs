@@ -17,6 +17,15 @@ app.get('/blog/:artigo?', function(req, res) {
 });
 
 app.get('/youtube', function(req, res) {
+
+    var canal = req.query["canal"];
+
+    if (canal) {
+        res.send('Bem vindo ao meu canal! ' + canal)
+        
+        return
+    }
+
     res.send('Bem vindo ao meu canal!')
 });
 
